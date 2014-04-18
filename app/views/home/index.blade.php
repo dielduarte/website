@@ -4,19 +4,42 @@
 <section class="reclame">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="col-lg-2 col-lg-offset-2 text-center">
+                <i class="fa fa-frown-o fa-xxl"></i>
+            </div>
+            <div class="col-lg-6">
                 <h2>Ônibus lotado? Desrespeito ao horário? Poste a sua reclamação!</h2>
                 <p>
                     Você já cansou de reclamar no site da BHTrans e nada melhorar? Vamos
-                    tornar públicas os problemas e estatísticas do transporte público de
+                    tornar públicos os problemas e estatísticas do transporte público de
                     Belo Horizonte. Cadastre o seu problema e ajude a evidenciar a porcaria
                     de transporte público que nós temos.
                 </p>
+                <a class="btn btn-default btn-lg" href="#form">Conte o seu problema</a>
             </div>
         </div>
     </div>
 </section>
-<section>
+<section class="share">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2>Compartilhe!</h2>
+                <p>Gostou da ideia? Ajude a divulgar!</p>
+                <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="btn btn-twitter" target="_blank" href="http://twitter.com/home?status=Cansado do transporte público de BH? Compartilhe sua história em {{ URL::current() }}">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="btn btn-plus" target="_blank" href="https://plus.google.com/share?url={{ URL::current() }}">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="form">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 text-center">
