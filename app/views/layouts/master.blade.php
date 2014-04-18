@@ -4,7 +4,9 @@
     <title>Não Move - Exponha os problemas do seu transporte público</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{{ URL::to('/') }}/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::to('/') }}/css/style.css">
 </head>
 <body>
@@ -12,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1">
-                    <a href="{{ URL::to('/') }}"><img src="{{ URL::to('/') }}/img/logo.png"></a>
+                    <a class="title" href="{{ URL::to('/') }}">NÃO MOVE</a>
                 </div>
                 <div class="col-lg-5 text-right">
                     <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>

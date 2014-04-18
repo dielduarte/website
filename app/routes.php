@@ -26,8 +26,11 @@ Route::post('registrar-relato', function(){
     } 
     else
     {
-        Complaint::create(Input::except('_token'));
-        return Redirect::to('/')->with('message', 'Relato adicionado com sucesso!')->with('messageType', 'success');  
+        $complaint = Complaint::create(Input::except('_token'));
+        return Redirect::to('reclamacao/' . $complaint->id )
+            ->with('message', 'O seu relato foi adicionado com sucesso! 
+                Compartilhe com seus amigos a sua história.')
+            ->with('messageType', 'success');  
     }
 });
 
@@ -38,6 +41,11 @@ Route::get('linhas/{line}', function($line){
         return View::make('buses.view')->with('bus', $bus);
     }
     App::abort(404);
+});
+
+Route::get('reclamacao/{reclamacao_id}', function($reclamacao_id){
+    $complaint = Complaint::findOrFail($reclamacao_id);
+    return View::make('complaints.view')->with('complaint', $complaint);
 });
 
 Route::get('estatisticas', function(){
