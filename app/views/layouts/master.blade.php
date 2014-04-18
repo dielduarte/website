@@ -15,17 +15,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1">
+                    <button class="btn btn-success visible-xs visible-sm pull-right" data-toggle="collapse" href="#menu">
+                        <i class="fa fa-align-justify"></i>
+                    </button>
                     <a class="title" href="{{ URL::to('/') }}">
                         NÃO MOVE
                     </a>
                 </div>
                 <div class="col-lg-5 text-right">
-                    <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
-                    <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
+                    <div class="visible-md visible-lg">
+                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+    <section id="menu" class="menu collapse">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 visible-sm visible-xs">
+                    <a class="btn btn-block" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                    <a class="btn btn-block" href="{{ URL::to('/') }}/contato">Contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
     @yield('content')
     <footer>
         &copy; 2014 Luiz Felipe Pedone
