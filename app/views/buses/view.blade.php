@@ -14,7 +14,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-10 col-sm-offset-1">
                 <h3 class="text-center">Reclamações <span class="label label-success">{{ $bus->complaints()->count() }}</span></h3>
                 <table class="table table-striped">
                     <thead>
