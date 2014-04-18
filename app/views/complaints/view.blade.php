@@ -26,12 +26,25 @@
                 <p>
                     {{ $complaint->story}}
                 </p>
-                <p class="info text-right">Este foi a reclamação {{ $complaint->id }} registrada.</p>
+                <p class="info text-right">Esta foi a reclamação {{ $complaint->id }} registrada.</p>
+                <p class="info text-center">
+                    <a href="{{ URL::to('/')}}">Conte a sua história</a>
+                    &middot;
+                    <a href="{{ URL::to('/')}}/linhas/{{ $complaint->bus->line }}">Ver mais reclamações desta linha</a>
+                    
+
+                </p>
                 <hr>
                 <div class="text-center">
-                <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}"><i class="fa fa-facebook-square fa-2x"></i> <br>Compartilhar no Facebook</a>
-                <a class="btn btn-twitter" target="_blank" href="http://twitter.com/home?status=Mais uma reclamação sobre a linha {{ $complaint->bus->line }} do transporte público de BH. Veja: {{ URL::current() }}"><i class="fa fa-twitter-square fa-2x"></i> <br>Compartilhar no Twitter</a>
-                <a class="btn btn-plus" target="_blank" href="https://plus.google.com/share?url={{ URL::current() }}"><i class="fa fa-plus-square fa-2x"></i> <br>Compartilhar no G+</a>
+                <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}">
+                    <i class="fa fa-facebook-square fa-2x"></i> <br>Compartilhar
+                </a>
+                <a class="btn btn-twitter" target="_blank" href="http://twitter.com/home?status=Mais uma reclamação sobre a linha {{ $complaint->bus->line }} do transporte público de BH. Veja: {{ URL::current() }}">
+                    <i class="fa fa-twitter-square fa-2x"></i> <br>Compartilhar
+                </a>
+                <a class="btn btn-plus" target="_blank" href="https://plus.google.com/share?url={{ URL::current() }}">
+                    <i class="fa fa-plus-square fa-2x"></i> <br>Compartilhar
+                </a>
                 </div>
             </div>        
         </div>

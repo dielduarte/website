@@ -55,19 +55,16 @@ header a{
 }
 
 .btn-facebook{
-    width: 30%;
     background-color: #3B5998;
     color: #FFF!important;
 }
 
 .btn-twitter{
-    width: 30%;
     background-color: #428bca;
     color: #FFF!important;
 }
 
 .btn-plus{
-    width: 30%;
     background-color: #dd4b39;
     color: #FFF!important;
 }

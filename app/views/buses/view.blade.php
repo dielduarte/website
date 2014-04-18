@@ -16,14 +16,38 @@
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <h3 class="text-center">Reclamações <span class="label label-success">{{ $bus->complaints()->count() }}</span></h3>
-                @foreach($bus->complaints()->get() as $complaint)
-                    <h4>Reclamação #{{ $complaint->id}}</h4>
-                    <b>Usuário:</b> {{ $complaint->name }}
-                    <p>
-                    <b>Reclamação:</b>
-                    {{ $complaint->story }}
-                    </p>
+                <table class="table table-striped">
+                    <thead>
+                        <th></th>
+                        <th>Usuário</th>
+                        <th>Tipo de Reclamação</th>
+                        <th>Data</th>
+                        <th></th>
+                    </thead>
+                
+                @foreach($bus->complaints()->orderBy('created_at', 'DESC')->get() as $complaint)
+                <tr>
+                    <td><a class="btn btn-success btn-xs" href="{{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">Ver Relato Completo</a></td>
+                    <td>{{ $complaint->name }}</td>
+                    <td>{{ $complaint->reason->reason }}</td>
+                    <td>{{ $complaint->created_at->format('d/m/Y')}}</td>
+                    <td>
+                        <a class="btn btn-sm btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="btn btn-sm btn-twitter" target="_blank" href="http://twitter.com/home?status=Mais uma reclamação sobre a linha {{ $complaint->bus->line }} do transporte público de BH. Veja: {{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-sm btn-plus" target="_blank" href="https://plus.google.com/share?url={{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </td>
+                </tr>
+                     
+                    
+                </div>
                 @endforeach
+                </table>
             </div>        
         </div>
     </div>
