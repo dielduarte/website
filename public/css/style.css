@@ -1,0 +1,43 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: 'Bitter', serif;
+}
+
+header{
+    padding: 30px;
+}
+
+header a{
+    margin-left: 10px
+}
+
+h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.reclame{
+    background-color: #27ae60;
+    color: #FFF;
+    padding: 30px;
+}
+.reclame h2{
+    padding: 0px;
+    margin: 0px;
+}
+.reclame p{
+    padding: 10px;
+    margin: 0px;
+}
+
+footer{
+    background-color: #E1E1E1;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    margin-top: 20px;
+}
