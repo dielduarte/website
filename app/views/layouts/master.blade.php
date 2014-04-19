@@ -1,9 +1,18 @@
 <!DOCTYPE>
 <html>
 <head>
-    <title>Não Move - Exponha os problemas do seu transporte público</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">    
+    <meta name="viewport" content="width=device-width">
+    <title>Não Move - Exponha os problemas do seu transporte público</title>
+    <meta name="description" content="Você já cansou de reclamar no site da BHTrans e nada melhorar? 
+    Vamos tornar públicos os problemas e estatísticas do transporte público de Belo Horizonte. 
+    Cadastre o seu problema e ajude a evidenciar a porcaria de transporte público que nós temos.">
+    <meta name="keywords" content="mobilidade urbana, transporte público, transporte, bhtrans, bh, belo horizonte, ônibus, reclamação, problema, metrô">
+    <meta name=”title content="Não Move">
+    <meta name="author" content="Luiz Felipe Pedone" />
+    <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
+    {{ Minify::stylesheet(array('/css/bootstrap.min.css', '/css/style.css')) }}
+    <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
 </head>
 <body>
     <header>
@@ -51,6 +60,3 @@
     </script>
 </body>
 </html>
-<link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
-{{ Minify::stylesheet(array('/css/bootstrap.min.css', '/css/style.css')) }}
-<link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
