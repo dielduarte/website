@@ -3,10 +3,7 @@
 <head>
     <title>Não Move - Exponha os problemas do seu transporte público</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
-    {{ Minify::stylesheet(array('/css/bootstrap.min.css', '/css/style.css')) }}
-    <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
+    <meta name="viewport" content="width=device-width">    
 </head>
 <body>
     <header>
@@ -54,3 +51,6 @@
     </script>
 </body>
 </html>
+<link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
+{{ Minify::stylesheet(array('/css/bootstrap.min.css', '/css/style.css')) }}
+<link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
