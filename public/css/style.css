@@ -84,9 +84,11 @@ header a{
 }
 
 footer{
-    background-color: #E1E1E1;
-    text-align: center;
-    padding: 20px;
+    background-color: #F1F1F1;
+    padding: 20px 0px 20px 0px;
     font-size: 12px;
     margin-top: 20px;
+}
+
+footer li{
 }

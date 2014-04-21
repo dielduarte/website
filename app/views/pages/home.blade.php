@@ -58,8 +58,8 @@
                 {{ Form::open(['url' => 'registrar-relato', 'data-parsley-validate']) }}
                     {{ Form::textField('name', 'Seu nome', Input::old('name')) }}
                     {{ Form::emailField('email', 'Seu e-mail (não será divulgado)', Input::old('email')) }}
-                    {{ Form::selectField('bus_id', 'Em qual linha foi o problema?', Bus::orderBy('line', 'ASC')->lists('line', 'id'), Input::old('line')) }}
-                    {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
+                    {{ Form::selectField('bus_id', 'Em qual linha foi o problema?', Bus::remember(720)->orderBy('line', 'ASC')->lists('line', 'id'), Input::old('line')) }}
+                    {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::remember(720)->orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
                     {{ Form::textAreaField('story', 'Conte a sua história', Input::old('story')) }}
                     {{ Form::sub('Enviar Reclamação', 'success', 'lg') }}
                 {{ Form::close() }}
@@ -72,7 +72,7 @@
                         <th width="50%">Número de Reclamações</th>
                     </thead>
                     <tbody>
-                        @foreach(Complaint::leaderboard(10) as $complaint)
+                        @foreach($complaints as $complaint)
                             <tr>
                                 <td><a href="linhas/{{ $complaint->bus->line }}">{{ $complaint->bus->line }}</a></td>
                                 <td>{{ $complaint->count }}</td>
@@ -80,7 +80,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-success btn-lg" href="estatisticas">Ver Estatísticas Completas</a>
+                <a class="btn btn-success btn-lg" href="/estatisticas">Ver Estatísticas Completas</a>
             </div>
         </div>
     </div>

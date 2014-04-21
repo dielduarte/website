@@ -30,6 +30,11 @@ class Complaint extends \BaseModel {
                         ->get(['bus_id', DB::raw('COUNT(id) AS count')]);
     }
 
+    public static function latest($limit)
+    {
+        return static::orderBy('created_at', 'DESC')->take($limit)->get();
+    }
+
     public static function perReason( $limit = null)
     {
         return static::groupBy('reason_id')

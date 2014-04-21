@@ -21,7 +21,7 @@
                         <th width="50%">Número de Reclamações</th>
                     </thead>
                     <tbody>
-                        @foreach(Complaint::leaderboard(10) as $complaint)
+                        @foreach($complaints as $complaint)
                             <tr>
                                 <td><a href="linhas/{{ $complaint->bus->line }}">{{ $complaint->bus->line }}</a></td>
                                 <td>{{ $complaint->count }}</td>
@@ -38,7 +38,7 @@
                         <th width="50%">Número de Reclamações</th>
                     </thead>
                     <tbody>
-                        @foreach(Complaint::perReason(10) as $complaint)
+                        @foreach($reasons as $complaint)
                             <tr>
                                 <td>{{ $complaint->reason->reason }}</td>
                                 <td>{{ $complaint->count }}</td>

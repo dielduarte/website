@@ -46,7 +46,36 @@
     </section>
     @yield('content')
     <footer>
-        &copy; 2014 Luiz Felipe Pedone
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Páginas</h4>
+                    <ul>
+                    <li><a href="/">Página Inicial</a></li>
+                    <li><a href="/#form">Poste A Sua Reclamação</a></li>
+                    <li><a href="/estatisticas">Estatísticas</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Últimas Reclamações</h4>
+                    <ul>
+                        @foreach(Complaint::latest(5) as $complaint)
+                            <li><a href="/reclamacao/{{ $complaint->id }}">{{ $complaint->reason->reason }} no {{ $complaint->bus->line }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Redes Sociais</h4>
+                    <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/naomove">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a class="btn btn-twitter" target="_blank" href="http://twitter.com/bhnaomove">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+                </div>
+            </div>
+        </div>
     </footer>
     {{ Minify::javascript(array('/js/jquery-1.11.0.min.js', '/js/bootstrap.min.js')) }}
 	<script>
