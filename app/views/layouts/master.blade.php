@@ -10,8 +10,7 @@
     <meta name="keywords" content="mobilidade urbana, transporte público, transporte, bhtrans, bh, belo horizonte, ônibus, reclamação, problema, metrô">
     <meta name=”title content="Não Move">
     <meta name="author" content="Luiz Felipe Pedone" />
-    <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
-    {{ Minify::stylesheet(array('/css/bootstrap.min.css', '/css/style.css')) }}
+    {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
 </head>
 <body>
