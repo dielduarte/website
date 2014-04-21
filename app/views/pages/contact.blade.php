@@ -21,6 +21,9 @@
                 <a class="btn btn-twitter" target="_blank" href="http://twitter.com/bhnaomove">
                     <i class="fa fa-twitter-square"></i> Seguir
                 </a>
+                <a class="btn btn-plus" target="_blank" href="https://plus.google.com/b/110277514594301318631/110277514594301318631/about?hl=pt-BR">
+                    <i class="fa fa-plus-square"></i> Seguir
+                </a>
                 <hr>
                 <h3>Quer Colaborar?</h3>
                 <p>
