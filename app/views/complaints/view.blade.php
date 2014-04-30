@@ -21,12 +21,12 @@
                     </div>
                 @endif
                 <p class="text-center info">
-                Enviado por {{ $complaint->name }} no dia {{ $complaint->created_at->format('d/m/Y') }}
+                Enviado por {{{ $complaint->name }}} no dia {{ $complaint->created_at->format('d/m/Y') }}
                 </p>
                 <p>
-                    {{ $complaint->story}}
+                    {{{ $complaint->story }}}
                 </p>
-                <p class="info text-right">Esta foi a reclamação {{ $complaint->id }} registrada.</p>
+                <p class="info text-right">Esta foi a {{ $complaint->id }}a reclamação registrada.</p>
                 <p class="info text-center">
                     <a href="{{ URL::to('/')}}">Conte a sua história</a>
                     &middot;
