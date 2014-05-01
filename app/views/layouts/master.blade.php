@@ -10,6 +10,8 @@
     <meta name="keywords" content="mobilidade urbana, transporte público, transporte, bhtrans, bh, belo horizonte, ônibus, reclamação, problema, metrô">
     <meta name=”title content="Não Move">
     <meta name="author" content="Luiz Felipe Pedone" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
     {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
 </head>
@@ -81,6 +83,8 @@
         </div>
     </footer>
     {{ Minify::javascript(array('/js/jquery-1.11.0.min.js', '/js/bootstrap.min.js')) }}
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    @yield('js')
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
