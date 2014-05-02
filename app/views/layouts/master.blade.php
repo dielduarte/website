@@ -47,6 +47,18 @@
         </div>
     </section>
     @yield('content')
+        <section class="na-midia">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>O Não Move Na Mídia</h3>
+                    <a target="blank" href="http://noticias.r7.com/minas-gerais/revoltado-com-transporte-publico-de-bh-usuario-cria-site-para-reunir-criticas-01052014"><img src="{{ URL::to('/') }}/img/r7.png" class="logo-na-midia"></a>
+                    <a target="blank" href="http://www.otempo.com.br/cidades/jovem-cria-site-que-re%C3%BAne-reclama%C3%A7%C3%B5es-sobre-o-transporte-p%C3%BAblico-em-bh-1.829968"><img src="{{ URL::to('/') }}/img/o-tempo.png" class="logo-na-midia"></a>
+                    <a target="blank" href="http://www.bhaz.com.br/insatisfeito-com-o-transporte-publico-jovem-cria-site-para-usuarios-reclamarem-da-mobilidade-urbana-em-bh/"><img src="{{ URL::to('/') }}/img/bhaz.png" class="logo-na-midia"></a>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <div class="row">
@@ -95,6 +107,5 @@
   ga('send', 'pageview');
 
 </script>
-
 </body>
 </html>

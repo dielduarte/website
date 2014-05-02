@@ -83,13 +83,38 @@ header a{
     color: #FFF!important;
 }
 
-footer{
-    background-color: #F1F1F1;
-    padding: 20px 0px 20px 0px;
-    font-size: 12px;
+.na-midia{
     margin-top: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
 }
 
+.logo-na-midia{ 
+    max-width: 150px;
+    max-height: 50px;
+    margin: 10px;
+    -webkit-filter: grayscale(1); -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+    filter: gray; filter: grayscale(100%);
+    filter: url(desaturate.svg#greyscale);
+}
+
+
+footer{
+    background-color: #27ae60;
+    padding: 20px 0px 20px 0px;
+    font-size: 12px;
+    color: #f1f1f1;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #f1f1f1!important;
+}
 footer li{
 }
 
