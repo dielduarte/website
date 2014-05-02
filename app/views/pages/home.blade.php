@@ -58,7 +58,7 @@
                 {{ Form::open(['url' => 'registrar-relato', 'data-parsley-validate']) }}
                     {{ Form::textField('name', 'Seu nome', Input::old('name')) }}
                     {{ Form::emailField('email', 'Seu e-mail (não será divulgado)', Input::old('email')) }}
-                    {{ Form::selectField('bus_id', 'Em qual linha foi o problema?', Bus::remember(720, 'bus_lines')->orderBy('line', 'ASC')->lists('line', 'id'), Input::old('line'), ['id' => 'combobox']) }}
+                    {{ Form::selectField('bus_id', 'Em qual linha foi o problema?', Bus::remember(720, 'bus_lines')->select(DB::raw('concat (line," (", itinerary, ")") as line_plus_itinerary, id'))->orderBy('line_plus_itinerary', 'ASC')->lists('line_plus_itinerary', 'id'), Input::old('line'), ['id' => 'combobox']) }}
                     {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::remember(720)->orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
                     {{ Form::textAreaField('story', 'Conte a sua história', Input::old('story')) }}
                     {{ Form::sub('Enviar Reclamação', 'success', 'lg') }}
