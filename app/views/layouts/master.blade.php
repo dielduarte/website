@@ -31,6 +31,7 @@
                 <div class="col-lg-5 text-right">
                     <div class="visible-md visible-lg">
                         <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
                         <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
                     </div>
                 </div>
@@ -42,13 +43,32 @@
             <div class="row">
                 <div class="col-lg-12 visible-sm visible-xs">
                     <a class="btn btn-block" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                    <a class="btn btn-block" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
                     <a class="btn btn-block" href="{{ URL::to('/') }}/contato">Contato</a>
                 </div>
             </div>
         </div>
     </section>
     @yield('content')
-        <section class="na-midia">
+    <hr>
+    <section class="compartilhe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-right">
+                    Compartilhe: <a class="btn btn-xs btn-facebook btn-square" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="btn btn-xs btn-twitter btn-square" target="_blank" href="http://twitter.com/home?status=Conheça o Não Move. Um site para reclamar do transporte público de BH. {{ URL::current() }}">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="btn btn-xs btn-plus btn-square" target="_blank" href="https://plus.google.com/share?url={{ URL::current() }}">
+                    <i class="fa fa-plus"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="na-midia">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

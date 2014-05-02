@@ -83,6 +83,16 @@ header a{
     color: #FFF!important;
 }
 
+.btn-square{
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+}
+
+
+.compartilhe{
+  font-size: 12px;
+}
 .na-midia{
     margin-top: 20px;
     margin-top: 20px;

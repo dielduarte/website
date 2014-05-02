@@ -22,6 +22,14 @@ class PageController extends \BaseController {
 	}
 
 	/**
+	 *	Load the media page.
+	 **/
+	public function media()
+	{
+		return View::make('pages.media');
+	}
+
+	/**
 	 *	Load the contacts page.
 	 **/
 	public function contact()
