@@ -93,9 +93,22 @@ header a{
 .compartilhe{
   font-size: 12px;
 }
+
+.ad{
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 11px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.ad img{
+  max-width: 100%;
+  height: auto
+}
+
 .na-midia{
-    margin-top: 20px;
-    margin-top: 20px;
     padding: 20px;
     text-align: center;
     background-color: #f1f1f1;

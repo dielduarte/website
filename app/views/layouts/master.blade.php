@@ -68,6 +68,15 @@
             </div>
         </div>
     </section>
+    <section class="ad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a rel='nofollow' href='http://www.meliuz.com.br/ref_luizpedone'><img width='728' height='90' alt='Cupom de Desconto' title='Cupom de Desconto' src='http://static.meliuz.com.br/img/banners/blog-728x90.png' /></a>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="na-midia">
         <div class="container">
             <div class="row">
