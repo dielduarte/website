@@ -71,8 +71,11 @@
     <section class="ad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center visible-lg visible-md visible-sm">
                     <a rel='nofollow' href='http://www.meliuz.com.br/ref_luizpedone'><img width='728' height='90' alt='Cupom de Desconto' title='Cupom de Desconto' src='http://static.meliuz.com.br/img/banners/blog-728x90.png' /></a>
+                </div>
+                <div class="col-lg-12 text-center visible-xs">
+                    <a rel='nofollow' href='http://www.meliuz.com.br/ref_luizpedone'><img width='250' height='250' alt='Cupom de Desconto' title='Cupom de Desconto' src='http://static.meliuz.com.br/img/banners/blog-250x250.png' /></a>
                 </div>
             </div>
         </div>
