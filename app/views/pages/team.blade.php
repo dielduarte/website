@@ -36,7 +36,7 @@
                     <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/silva.51.pereira">
                         <i class="fa fa-facebook-square fa-2x"></i>
                     </a>
-                    <a class="btn btn-twitter" target="_blank" href="http://twitter.com/uai_ou">
+                    <a class="btn btn-twitter" target="_blank" href="http://twitter.com/uaiteve">
                         <i class="fa fa-twitter-square fa-2x"></i>
                     </a>
                 </p>
