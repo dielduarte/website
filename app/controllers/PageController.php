@@ -37,4 +37,12 @@ class PageController extends \BaseController {
 		return View::make('pages.contact');
 	}
 
+	/**
+	 *	Load the team page.
+	 **/
+	public function team()
+	{
+		return View::make('pages.team');
+	}
+
 }

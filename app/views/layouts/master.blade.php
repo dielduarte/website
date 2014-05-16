@@ -33,6 +33,8 @@
                 <div class="col-lg-5 text-right">
                     <div class="visible-md visible-lg">
                         <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/equipe">Equipe</a>
+                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Fotos</a>
                         <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
                         <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
                     </div>
@@ -45,6 +47,8 @@
             <div class="row">
                 <div class="col-lg-12 visible-sm visible-xs">
                     <a class="btn btn-block" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                    <a class="btn btn-block" href="{{ URL::to('/') }}/equipe">Equipe</a>
+                    <a class="btn btn-block" href="{{ URL::to('/') }}/na-midia">Fotos</a>
                     <a class="btn btn-block" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
                     <a class="btn btn-block" href="{{ URL::to('/') }}/contato">Contato</a>
                 </div>
