@@ -15,6 +15,8 @@
     {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
     @yield('facebook-graph')
+    <meta property="og:image" content="http://naomove.com.br/img/nao-move-logo.png" />
+
 </head>
 <body>
     <header>
