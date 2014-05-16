@@ -9,6 +9,19 @@ h1, h2, h3, h4, h5{
     font-family: 'Bitter', serif;
 }
 
+.lead{
+  padding: 10px;
+  margin: 0px;
+}
+
+.green {
+  color: #27ae60;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 h2{
     font-size: 24px;
     font-weight: bold;
@@ -125,6 +138,10 @@ header a{
 
 .img {
   padding: 0px 50px 0px 50px;
+}
+
+.instafeed-padding {
+  padding: 10px;
 }
 
 .about {

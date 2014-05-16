@@ -45,4 +45,12 @@ class PageController extends \BaseController {
 		return View::make('pages.team');
 	}
 
+	/**
+	 *	Load the photos page.
+	 **/
+	public function photos()
+	{
+		return View::make('pages.photos');
+	}
+
 }

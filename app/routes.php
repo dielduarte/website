@@ -7,6 +7,7 @@ Route::get('/', 'PageController@home');
 Route::get('estatisticas', 'PageController@statistics');
 Route::get('na-midia', 'PageController@media');
 Route::get('equipe', 'PageController@team');
+Route::get('fotos', 'PageController@photos');
 Route::get('contato', 'PageController@contact');
 Route::get('linhas/{line}', 'BusController@line');
 Route::get('reclamacao/{reclamacao_id}', 'ComplaintController@view');
