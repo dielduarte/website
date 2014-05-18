@@ -2,7 +2,7 @@
 
 @section('facebook-graph')
 <meta property="og:title" content="{{ $complaint->reason->reason }} na linha {{ $complaint->bus->line }}">
-    <meta property="og:title" content="{{{ $complaint->story }}}">
+    <meta property="og:description" content="{{{ $complaint->story }}}">
 @stop
 
 @section('content')
