@@ -27,7 +27,7 @@
                 
                 @foreach($bus->complaints()->orderBy('created_at', 'DESC')->get() as $complaint)
                 <tr>
-                    <td><a class="btn btn-nao-move btn-xs" href="{{{ URL::to('/') }}/reclamacao/{{ $complaint->id }}}">Ver Relato Completo</a></td>
+                    <td><a class="btn btn-nao-move btn-xs" href="{{{ URL::to('/') }}} /reclamacao/ {{{ $complaint->id }}}">Ver Relato Completo</a></td>
                     <td>{{{ $complaint->name }}}</td>
                     <td>{{{ $complaint->reason->reason }}}</td>
                     <td>{{{ $complaint->created_at->format('d/m/Y') }}}</td>
