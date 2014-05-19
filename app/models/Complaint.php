@@ -19,7 +19,8 @@ class Complaint extends \BaseModel {
         'email' => 'required|email',
         'bus_id' => 'required|integer|exists:buses,id',
         'reason_id' => 'required|integer|exists:reasons,id',
-        'story' => 'required'
+        'story' => 'required',
+        'recaptcha_response_field' => 'required|recaptcha'
     ];
 
     public static function leaderboard( $limit = null)
