@@ -13,30 +13,30 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
     {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
-    <link rel="shortcut icon" href="{{ URL::to('/') }}/img/favicon.png" type="image/ico" />
+    <link rel="shortcut icon" href="{{ URL::to('/') }}/img/logos/favicon.png" type="image/ico" />
+    <meta property="og:image" content="{{ URL::to('/') }}/img/logos/nao-move-vertical.png" />
+    <meta property="og:url" content="{{ URL::current() }}">
     @yield('facebook-graph')
-    <meta property="og:image" content="http://naomove.com.br/img/nao-move-logo.png" />
-
 </head>
 <body>
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1">
-                    <button class="btn btn-success visible-xs visible-sm pull-right" data-toggle="collapse" href="#menu">
+                    <button class="btn btn-nao-move visible-xs visible-sm pull-right menu" data-toggle="collapse" href="#menu">
                         <i class="fa fa-align-justify"></i>
                     </button>
                     <a class="title" href="{{ URL::to('/') }}">
-                        NÃO MOVE
+                        <img src="{{ URL::to('/') }}/img/logos/nao-move.png">
                     </a>
                 </div>
                 <div class="col-lg-5 text-right">
-                    <div class="visible-md visible-lg">
-                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
-                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/equipe">Equipe</a>
-                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/fotos">Fotos</a>
-                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
-                        <a class="btn btn-success btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
+                    <div class="visible-md menu visible-lg">
+                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
+                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/equipe">Equipe</a>
+                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/fotos">Fotos</a>
+                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
+                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
                     </div>
                 </div>
             </div>

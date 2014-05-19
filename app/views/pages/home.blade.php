@@ -61,7 +61,7 @@
                     {{ Form::selectField('bus_id', 'Em qual linha foi o problema?', Bus::remember(720, 'bus_lines')->select(DB::raw('concat (line," (", itinerary, ")") as line_plus_itinerary, id'))->orderBy('line_plus_itinerary', 'ASC')->lists('line_plus_itinerary', 'id'), Input::old('line'), ['id' => 'combobox']) }}
                     {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::remember(720)->orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
                     {{ Form::textAreaField('story', 'Conte a sua história', Input::old('story')) }}
-                    {{ Form::sub('Enviar Reclamação', 'success', 'lg') }}
+                    {{ Form::sub('Enviar Reclamação', 'nao-move', 'lg') }}
                 {{ Form::close() }}
             </div>
             <div class="col-sm-6 text-center">
@@ -80,7 +80,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-success btn-lg" href="/estatisticas">Ver Estatísticas Completas</a>
+                <a class="btn btn-nao-move btn-lg" href="/estatisticas">Ver Estatísticas Completas</a>
             </div>
         </div>
     </div>

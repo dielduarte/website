@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-                <h3 class="text-center">Reclamações <span class="label label-success">{{ $bus->complaints()->count() }}</span></h3>
+                <h3 class="text-center">Reclamações</h3>
                 <table class="table table-striped">
                     <thead>
                         <th></th>
@@ -27,11 +27,11 @@
                 
                 @foreach($bus->complaints()->orderBy('created_at', 'DESC')->get() as $complaint)
                 <tr>
-                    <td><a class="btn btn-success btn-xs" href="{{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">Ver Relato Completo</a></td>
-                    <td>{{ $complaint->name }}</td>
-                    <td>{{ $complaint->reason->reason }}</td>
-                    <td>{{ $complaint->created_at->format('d/m/Y')}}</td>
-                    <td>
+                    <td><a class="btn btn-nao-move btn-xs" href="{{{ URL::to('/') }}/reclamacao/{{ $complaint->id }}}">Ver Relato Completo</a></td>
+                    <td>{{{ $complaint->name }}}</td>
+                    <td>{{{ $complaint->reason->reason }}}</td>
+                    <td>{{{ $complaint->created_at->format('d/m/Y') }}}</td>
+                    <td class="visible-lg">
                         <a class="btn btn-sm btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
                             <i class="fa fa-facebook"></i>
                         </a>

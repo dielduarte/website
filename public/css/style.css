@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5{
 }
 
 .green {
-  color: #27ae60;
+  color: #cc9933;
 }
 
 .bold {
@@ -28,11 +28,20 @@ h2{
 }
 
 a{
-    color: #27ae60;
+    color: #cc9933;
 }
 
 a:hover{
-    color: #27ae60;
+    color: #cc9933;
+}
+
+.btn-nao-move{
+  background-color: #cc9933;
+  color: #FFF;
+}
+
+.menu {
+  margin-top: 35px;
 }
 
 header{
@@ -50,7 +59,7 @@ header a{
 }
 
 .reclame{
-    background-color: #27ae60;
+    background-color: #cc9933;
     color: #FFF;
     padding: 30px;
 }
@@ -151,7 +160,7 @@ header a{
 }
 
 footer{
-    background-color: #27ae60;
+    background-color: #cc9933;
     padding: 20px 0px 20px 0px;
     font-size: 12px;
     color: #f1f1f1;
