@@ -11,6 +11,7 @@ Route::get('fotos', 'PageController@photos');
 Route::get('contato', 'PageController@contact');
 Route::get('linhas/{line}', 'BusController@line');
 Route::get('reclamacao/{reclamacao_id}', 'ComplaintController@view');
+Route::get('tipo-de-reclamacao/{slug}', 'ReasonController@lists');
 
 /**
  *  POST routes
