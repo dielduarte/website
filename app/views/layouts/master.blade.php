@@ -14,7 +14,7 @@
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
     {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/logos/favicon.png" type="image/ico" />
-    <meta property="og:image" content="{{ URL::to('/') }}/img/logos/nao-move-vertical.png" />
+    <meta property="og:image" content="{{ URL::to('/') }}/img/logos/nao-move-vertical.jpg" />
     <meta property="og:url" content="{{ URL::current() }}">
     @yield('facebook-graph')
 </head>

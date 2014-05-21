@@ -223,3 +223,10 @@ footer li{
   -moz-border-radius: 0px;
   background-image: none;
 }
+
+@media(max-width: 600px){
+  .title img{
+    max-width: 70%;
+    max-height: auto; 
+  }
+}

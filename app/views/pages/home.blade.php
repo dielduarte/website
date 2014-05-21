@@ -62,7 +62,7 @@
                     {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::remember(720)->orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
                     {{ Form::textAreaField('story', 'Conte a sua história', Input::old('story')) }}
                     {{ Form::label('Código de Verificação') }}
-                    {{ Form::captcha(['theme' => 'clean']) }}
+                    {{ Form::captcha(['theme' => 'white']) }}
                     {{ Form::sub('Enviar Reclamação', 'nao-move', 'lg') }}
                 {{ Form::close() }}
             </div>

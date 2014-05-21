@@ -29,7 +29,7 @@
                 Enviado por {{{ $complaint->name }}} no dia {{ $complaint->created_at->format('d/m/Y') }}
                 </p>
                 <p>
-                    {{{ $complaint->story }}}
+                    {{ nl2br(e($complaint->story)) }}
                 </p>
                 <p class="info text-right">Esta foi a {{ $complaint->id }}a reclamação registrada.</p>
                 <p class="info text-center">
