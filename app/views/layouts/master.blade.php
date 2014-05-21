@@ -27,7 +27,7 @@
                         <i class="fa fa-align-justify"></i>
                     </button>
                     <a class="title" href="{{ URL::to('/') }}">
-                        <img src="{{ URL::to('/') }}/img/logos/nao-move.png">
+                        <img class="logo" src="{{ URL::to('/') }}/img/logos/nao-move.png">
                     </a>
                 </div>
                 <div class="col-lg-5 text-right">
