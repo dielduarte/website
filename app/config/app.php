@@ -121,8 +121,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 	    'CeesVanEgmond\Minify\MinifyServiceProvider',
-	    'Greggilbert\Recaptcha\RecaptchaServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider'
+	    'Greggilbert\Recaptcha\RecaptchaServiceProvider'
     ),
 
 	/*
