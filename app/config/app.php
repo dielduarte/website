@@ -122,7 +122,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 	    'CeesVanEgmond\Minify\MinifyServiceProvider',
 	    'Greggilbert\Recaptcha\RecaptchaServiceProvider',
-	),
+        'Barryvdh\Debugbar\ServiceProvider'
+    ),
 
 	/*
 	|--------------------------------------------------------------------------

@@ -14,6 +14,7 @@ class BusController extends \BaseController {
 	    {
 	        return View::make('buses.view', compact('bus'));
 	    }
-	    App::abort(404);
+
+        \App::abort(404);
 	}
 }

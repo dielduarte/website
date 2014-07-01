@@ -17,7 +17,7 @@ class PageController extends \BaseController {
 	public function statistics()
 	{
 		$complaints = Complaint::leaderboard();
-		$reasons = Complaint::perReason(10);
+		$reasons = Complaint::perReason();
     	return View::make('pages.statistics', compact('complaints', 'reasons'));
 	}
 

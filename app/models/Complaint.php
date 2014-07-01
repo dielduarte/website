@@ -14,6 +14,11 @@ class Complaint extends \BaseModel {
         'reported'   
     ];
 
+    protected $with = [
+        'bus',
+        'reason'
+    ];
+
     public static $rules = [
         'name' => 'required|min:5',
         'email' => 'required|email',
@@ -26,9 +31,9 @@ class Complaint extends \BaseModel {
     public static function leaderboard( $limit = null)
     {
         return static::groupBy('bus_id')
-                        ->orderBy(DB::raw('COUNT(id)'), 'DESC')
-                        ->take($limit)
-                        ->get(['bus_id', DB::raw('COUNT(id) AS count')]);
+                     ->orderBy(DB::raw('COUNT(id)'), 'DESC')
+                     ->take($limit)
+                     ->get(['bus_id', DB::raw('COUNT(id) AS count')]);
     }
 
     public static function latest($limit)
