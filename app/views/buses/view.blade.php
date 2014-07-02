@@ -15,7 +15,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-                <h3 class="text-center">Reclamações</h3>
+                <h2 class="text-center">Reclamações</h2>
+                @if (count($complaints) > 0)
                 <table class="table table-striped">
                     <thead>
                         <th></th>
@@ -25,7 +26,7 @@
                         <th></th>
                     </thead>
                 
-                @foreach($bus->complaints()->orderBy('created_at', 'DESC')->get() as $complaint)
+                @foreach($complaints as $complaint)
                 <tr>
                     <td><a class="btn btn-nao-move btn-xs" href="{{{ URL::to('/') }}}/reclamacao/{{{ $complaint->id }}}">Ver Relato Completo</a></td>
                     <td>{{{ $complaint->name }}}</td>
@@ -43,11 +44,13 @@
                         </a>
                     </td>
                 </tr>
-                     
-                    
-                </div>
                 @endforeach
                 </table>
+                @else
+                <p class="lead text-center">Esta linha não possui nenhuam reclamação.</p>
+                <p class="text-center">Tem uma reclamação? <a href="/#form">Poste aqui.</a></p>
+                @endif
+
             </div>        
         </div>
     </div>

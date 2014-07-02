@@ -10,9 +10,11 @@ class BusController extends \BaseController {
 	public function line($line)
 	{
 	    $bus = Bus::whereLine($line)->first();
-	    if ( $bus )
-	    {
-	        return View::make('buses.view', compact('bus'));
+	    if ( $bus ) {
+
+            $complaints = $bus->complaints()->orderBy('created_at', 'DESC')->get();
+
+	        return View::make('buses.view', compact('bus', 'complaints'));
 	    }
 
         \App::abort(404);
