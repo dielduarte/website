@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'luiz.pedone@gmail.com', 'name' => 'Luiz Felipe Pedone'),
+	'from' => array('address' => 'contato@naomove.com.br', 'name' => 'Não Move'),
 
 	/*
 	|--------------------------------------------------------------------------
