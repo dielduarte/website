@@ -224,10 +224,12 @@ footer li{
   background-image: none;
 }
 
-@media(max-width: 600px){
-  .logo{
-    width: 60%;
-    height: auto;
-    padding-top: 20px;
-  }
+.logo{ }
+
+@media (max-width: 699px) {
+    .logo{
+        max-width: 60%;
+        height: auto;
+        padding-top: 20px;
+    }
 }
