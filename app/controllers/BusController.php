@@ -47,8 +47,10 @@ class BusController extends \BaseController {
         } else {
 
             $bus = new Bus;
-            $bus->line = filter_var($data['line'], FILTER_SANITIZE_STRING);
-            $bus->itinerary = filter_var($data['itinerary'], FILTER_SANITIZE_STRING);
+            $bus->line       = filter_var($data['line'], FILTER_SANITIZE_STRING);
+            $bus->itinerary  = filter_var($data['itinerary'], FILTER_SANITIZE_STRING);
+            $bus->name       = filter_var($data['name'], FILTER_SANITIZE_STRING);
+            $bus->email      = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
             $bus->save();
 
 //            Mail::send('emails.add-new-line', $data, function ($message) {

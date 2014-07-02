@@ -1,7 +1,13 @@
 <?php
 
 class Bus extends \Eloquent {
-	protected $fillable = ['line', 'itinerary'];
+
+    protected $fillable = [
+        'line',
+        'itinerary',
+        'name',
+        'email'
+    ];
 
     /*
      * Scopes
