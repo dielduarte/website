@@ -55,7 +55,6 @@
                         Alguns campos não foram preenchidos corretamente. Eles estão marcados de vermelho.
                     </div>
                 @endif
-                {{ App::environment() }}
                 {{ Form::open(['url' => 'registrar-relato', 'data-parsley-validate']) }}
                     {{ Form::textField('name', 'Seu nome', Input::old('name')) }}
                     {{ Form::emailField('email', 'Seu e-mail (não será divulgado)', Input::old('email')) }}
