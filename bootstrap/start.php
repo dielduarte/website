@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('ae002107.dynamic.ppp.asahi-net.or.jp'),
+	'local' => ['ae002106.dynamic.ppp.asahi-net.or.jp'],
 
 ));
 
