@@ -51,10 +51,10 @@ class BusController extends \BaseController {
             $bus->itinerary = filter_var($data['itinerary'], FILTER_SANITIZE_STRING);
             $bus->save();
 
-            Mail::send('emails.add-new-line', $data, function($message)
-            {
-                $message->to('luiz.pedone@gmail.com', 'Luiz Felipe Pedone')->subject('Adicionar linha no Não Move');
-            });
+//            Mail::send('emails.add-new-line', $data, function($message)
+//            {
+//                $message->to('luiz.pedone@gmail.com', 'Luiz Felipe Pedone')->subject('Adicionar linha no Não Move');
+//            });
 
             return Redirect::to('adicionar-linha')
                 ->with('message', 'success');
