@@ -17,6 +17,10 @@ body{
     padding-top: 0px;
 }
 
+.navbar-form {
+    padding-top: 10px;
+}
+
 .navbar-nav .btn{
     margin-top: 18px;
 }

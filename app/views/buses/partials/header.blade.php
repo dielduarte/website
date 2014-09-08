@@ -2,8 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <h2>{{ $bus->line }}<br><small>{{ $bus->itinerary }}</small> </h2>
-                <h3></h3>
+                <h2>{{ $bus->line }}@if(!$bus->active) <small><strong><span class="text-danger">Linha desativada</span></strong></small>@endif<br><small>{{ $bus->itinerary }}</small></h2>
             </div>
             <div class="col-sm-2 text-center">
                 <h2>

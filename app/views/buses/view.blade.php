@@ -59,9 +59,11 @@ Linha {{ $bus->line  }}: reclamações e avaliações
                         </tr>
                     </tbody>
                 </table>
-                <div class="text-center">
-                    <a class="btn btn-warning btn-lg" href="{{ URL::route('score.form', [$bus->line]) }}">Avalie esta linha</a>
-                </div>
+                @if ($bus->active)
+                    <div class="text-center">
+                        <a class="btn btn-warning btn-lg" href="{{ URL::route('score.form', [$bus->line]) }}">Avalie esta linha</a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

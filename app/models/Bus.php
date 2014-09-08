@@ -25,6 +25,8 @@ class Bus extends \Eloquent {
         $query->where('active', '=', true);
     }
 
+
+
     /*
      * Relationships
      */

@@ -16,7 +16,7 @@ class ScoreController extends \BaseController
     {
         $data = \Input::all();
 
-        $bus = Bus::whereLine($line)->first();
+        $bus = Bus::whereLine($line)->active()->first();
 
         if ($bus) {
             $validation = \Score::validate($data);

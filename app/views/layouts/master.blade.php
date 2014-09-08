@@ -124,6 +124,15 @@
                 maximumSelectionSize: 5
             });
 
+            $("#header-select").select2({
+                minimumInputLength: 2,
+                maximumSelectionSize: 5
+            });
+
+        });
+
+        $('#header-select').click(function() {
+            window.location  = '{{ URL::to('/') }}/' + 'linhas/' + $('#header-select').val();
         });
 
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

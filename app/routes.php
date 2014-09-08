@@ -33,11 +33,7 @@ Route::get('avaliar/{line}', [
     'uses'  => 'ScoreController@form'
 ]);
 
-Route::post('avaliar/{line}', [
-    'before'    => 'csrf',
-    'as'        => 'score.post.form',
-    'uses'      => 'ScoreController@store'
-]);
+
 
 Route::get('adicionar-linha', 'BusController@addBusLine');
 
@@ -50,8 +46,15 @@ Route::get('tipo-de-reclamacao/{slug}', 'ReasonController@lists');
  * POST routes
  */
 Route::post('registrar-relato', [
-    'as'    => 'complaint.post',
-    'uses'  =>'ComplaintController@store'
+    'before'    => 'csrf',
+    'as'        => 'complaint.post',
+    'uses'      =>'ComplaintController@store'
+]);
+
+Route::post('avaliar/{line}', [
+    'before'    => 'csrf',
+    'as'        => 'score.post.form',
+    'uses'      => 'ScoreController@store'
 ]);
 
 Route::post('adicionar-linha', 'BusController@postNewLine');
