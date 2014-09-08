@@ -42,8 +42,8 @@
 <section id="form">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 text-center">
-                <h2>Conte o seu problema</h2>
+            <div class="col-sm-6">
+                <h2 class="text-center">Conte o seu problema</h2>
                 @if(Session::has('message'))
                     <div class="alert alert-{{ Session::get('messageType')}}">
                         {{ Session::get('message') }}
@@ -58,12 +58,12 @@
                 {{ Form::open(['url' => 'registrar-relato', 'data-parsley-validate']) }}
                     {{ Form::textField('name', 'Seu nome', Input::old('name')) }}
                     {{ Form::emailField('email', 'Seu e-mail (não será divulgado)', Input::old('email')) }}
-                    {{ Form::selectField('bus_id', 'Em qual linha foi o problema? (<a href="/adicionar-linha">A sua linha não está na lista?</a>)', Bus::activeBusesList()->lists('line_plus_itinerary', 'id'), Input::old('line'), ['id' => 'combobox']) }}
+                    {{ Form::select('bus_id', Bus::activeBusesList()->lists('line_plus_itinerary', 'id'), Input::old('line'), ['id' => 's2', 'class' => 'select2-container form-control']) }}
                     {{ Form::selectField('reason_id', 'Qual é o motivo da reclamação?', Reason::remember(720)->orderBy('reason', 'ASC')->lists('reason', 'id'), Input::old('reason')) }}
                     {{ Form::textAreaField('story', 'Conte a sua história', Input::old('story')) }}
-                    {{ Form::label('Código de Verificação') }}
-                    {{ Form::captcha(['theme' => 'white']) }}
-                    {{ Form::sub('Enviar Reclamação', 'nao-move', 'lg') }}
+                    <div class="text-center">
+                        {{ Form::submit('Enviar Reclamação', ['class' => 'btn btn-warning btn-lg']) }}
+                    </div>
                 {{ Form::close() }}
             </div>
             <div class="col-sm-6 text-center">
@@ -87,108 +87,4 @@
         </div>
     </div>
 </section>
-@stop
-
-@section('js')
-    <script type="text/javascript">
-      (function( $ ) {
-        $.widget( "custom.combobox", {
-          _create: function() {
-            this.wrapper = $( "<span>" )
-              .addClass( "custom-combobox" )
-              .insertAfter( this.element );
-     
-            this.element.hide();
-            this._createAutocomplete();
-          },
-     
-          _createAutocomplete: function() {
-            var selected = this.element.children( ":selected" ),
-              value = selected.val() ? selected.text() : "";
-     
-            this.input = $( "<input>" )
-              .appendTo( this.wrapper )
-              .val( value )
-              .attr( "title", "" )
-              .addClass( "form-control" )
-              .autocomplete({
-                delay: 0,
-                minLength: 0,
-                source: $.proxy( this, "_source" )
-              });
-     
-            this._on( this.input, {
-              autocompleteselect: function( event, ui ) {
-                ui.item.option.selected = true;
-                this._trigger( "select", event, {
-                  item: ui.item.option
-                });
-              },
-     
-              autocompletechange: "_removeIfInvalid"
-            });
-          },
-     
-          _source: function( request, response ) {
-            var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-            response( this.element.children( "option" ).map(function() {
-              var text = $( this ).text();
-              if ( this.value && ( !request.term || matcher.test(text) ) )
-                return {
-                  label: text,
-                  value: text,
-                  option: this
-                };
-            }) );
-          },
-     
-          _removeIfInvalid: function( event, ui ) {
-     
-            // Selected an item, nothing to do
-            if ( ui.item ) {
-              return;
-            }
-     
-            // Search for a match (case-insensitive)
-            var value = this.input.val(),
-              valueLowerCase = value.toLowerCase(),
-              valid = false;
-            this.element.children( "option" ).each(function() {
-              if ( $( this ).text().toLowerCase() === valueLowerCase ) {
-                this.selected = valid = true;
-                return false;
-              }
-            });
-     
-            // Found a match, nothing to do
-            if ( valid ) {
-              return;
-            }
-     
-            // Remove invalid value
-            this.input
-              .val( "" )
-              .attr( "title", value + " didn't match any item" )
-              .tooltip( "open" );
-            this.element.val( "" );
-            this._delay(function() {
-              this.input.tooltip( "close" ).attr( "title", "" );
-            }, 2500 );
-            this.input.data( "ui-autocomplete" ).term = "";
-          },
-     
-          _destroy: function() {
-            this.wrapper.remove();
-            this.element.show();
-          }
-        });
-      })( jQuery );
-     
-      $(function() {
-        $( "#combobox" ).combobox();
-        $( "#toggle" ).click(function() {
-          $( "#combobox" ).toggle();
-        });
-      });
-    </script>
 @stop

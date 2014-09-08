@@ -10,15 +10,40 @@ class BusController extends \BaseController {
 	public function line($line)
 	{
 	    $bus = Bus::whereLine($line)->first();
-	    if ( $bus ) {
 
-            $complaints = $bus->complaints()->orderBy('created_at', 'DESC')->get();
+        if ( $bus ) {
 
-	        return View::make('buses.view', compact('bus', 'complaints'));
+            $complaints = $bus->complaints()->orderBy('created_at', 'DESC')->take(5)->get();
+            $count      = $bus->complaints()->count();
+
+	        return View::make('buses.view', compact(
+                'bus',
+                'complaints',
+                'count'
+            ));
 	    }
 
         \App::abort(404);
 	}
+
+    public function complaints($line)
+    {
+        $bus = Bus::whereLine($line)->first();
+
+        if ( $bus ) {
+
+            $complaints = $bus->complaints()->orderBy('created_at', 'DESC')->paginate(20);
+            $count      = $bus->complaints()->count();
+
+            return View::make('buses.complaints', compact(
+                'bus',
+                'complaints',
+                'count'
+            ));
+        }
+
+        \App::abort(404);
+    }
 
     public function addBusLine()
     {
