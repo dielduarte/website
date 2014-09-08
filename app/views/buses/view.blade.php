@@ -12,6 +12,13 @@ Linha {{ $bus->line  }}: reclamações e avaliações
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
+                @if (\Session::has('message'))
+                    <br>
+                    <div class="alert alert-success text-center">
+                        {{ \Session::get('message') }}
+                        <p class="text-large">A sua nota para esta linha foi {{ \Session::get('score') }}.</p>
+                    </div>
+                @endif
                 <h2>Reclamações</h2>
                 @include('complaints.partials.list', [$complaints])
                 <div class="text-center">
