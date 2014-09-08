@@ -9,8 +9,14 @@ class ComplaintController extends \BaseController {
 	 */
 	public function view($complaint_id)
 	{
-		$complaint = Complaint::findOrFail($complaint_id);
-    	return View::make('complaints.view', compact('complaint'));
+		$complaint  = Complaint::findOrFail($complaint_id);
+        $bus        = $complaint->bus;
+        $count      = $complaint->bus->complaints()->count();
+    	return View::make('complaints.view', compact(
+            'complaint',
+            'bus',
+            'count'
+        ));
 	}
 
 	/**

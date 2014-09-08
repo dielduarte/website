@@ -1,57 +1,57 @@
 @extends('layouts.master')
 
+@section('title')
+Linha {{ $bus->line  }}: reclamações e avaliações
+@stop
+
 @section('content')
-<section class="reclame">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2>{{ $bus->line }}</h2>
-                <h3>{{ $bus->itinerary }}</h3>
-            </div>
-        </div>
-    </div>
-</section>
+
+@include('buses.partials.header', [$bus, $count])
+
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <h2 class="text-center">Reclamações</h2>
-                @if (count($complaints) > 0)
+            <div class="col-sm-8">
+                <h2>Reclamações</h2>
+                @include('complaints.partials.list', [$complaints])
+                <div class="text-center">
+                    <a class="btn btn-warning btn-lg" href="{{ URL::route('bus.complaints', [$bus->line]) }}">Ver Todas</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h2>Notas</h2>
                 <table class="table table-striped">
                     <thead>
-                        <th></th>
-                        <th>Usuário</th>
-                        <th>Tipo de Reclamação</th>
-                        <th>Data</th>
-                        <th></th>
+                        <th>Item</th>
+                        <th>Nota</th>
                     </thead>
-                
-                @foreach($complaints as $complaint)
-                <tr>
-                    <td><a class="btn btn-nao-move btn-xs" href="{{{ URL::to('/') }}}/reclamacao/{{{ $complaint->id }}}">Ver Relato Completo</a></td>
-                    <td>{{{ $complaint->name }}}</td>
-                    <td>{{{ $complaint->reason->reason }}}</td>
-                    <td>{{{ $complaint->created_at->format('d/m/Y') }}}</td>
-                    <td class="visible-lg">
-                        <a class="btn btn-sm btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a class="btn btn-sm btn-twitter" target="_blank" href="http://twitter.com/home?status=Mais uma reclamação sobre a linha {{ $complaint->bus->line }} do transporte público de BH. Veja: {{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a class="btn btn-sm btn-plus" target="_blank" href="https://plus.google.com/share?url={{ URL::to('/') }}/reclamacao/{{ $complaint->id }}">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
+                    <tbody>
+                        <tr>
+                            <td><strong>Pontualidade</strong></td>
+                            <td>7.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conforto</strong></td>
+                            <td>7.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custo Benefício</strong></td>
+                            <td>7.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Respeito ao usuário</strong></td>
+                            <td>7.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NOTA FINAL</strong></td>
+                            <td><strong><span class="text-success">9.9</span></strong></td>
+                        </tr>
+                    </tbody>
                 </table>
-                @else
-                <p class="lead text-center">Esta linha não possui nenhuam reclamação.</p>
-                <p class="text-center">Tem uma reclamação? <a href="/#form">Poste aqui.</a></p>
-                @endif
-
-            </div>        
+                <div class="text-center">
+                    <a class="btn btn-warning btn-lg">Avalie esta linha</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

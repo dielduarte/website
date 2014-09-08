@@ -3,59 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Não Move - Exponha os problemas do seu transporte público</title>
+    <title>@yield('title', 'Não Move - Exponha os problemas do seu transporte público')</title>
     <meta name="description" content="Você já cansou de reclamar no site da BHTrans e nada melhorar? 
     Vamos tornar públicos os problemas e estatísticas do transporte público de Belo Horizonte. 
     Cadastre o seu problema e ajude a evidenciar a porcaria de transporte público que nós temos.">
     <meta name="keywords" content="mobilidade urbana, transporte público, transporte, bhtrans, bh, belo horizonte, ônibus, reclamação, problema, metrô">
     <meta name=”title content="Não Move">
+
     <meta name="author" content="Luiz Felipe Pedone" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
-    {{ Minify::stylesheet(array('/css/bootstrap.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css')) }}
+    {{ Minify::stylesheet(array('/assets/bootstrap/bootstrap.min.css', '/assets/font-awesome/css/font-awesome.css', '/css/style.css', '/assets/select2/select2.css', '/assets/select2/select2-bootstrap.css')) }}
+
+    <link rel="stylesheet" href="{{ asset('/assets/select2/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/select2/select2-bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/parsley/parsley.css') }}">
+
+
+
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/logos/favicon.png" type="image/ico" />
     <meta property="og:image" content="{{ URL::to('/') }}/img/logos/nao-move-vertical.jpg" />
     <meta property="og:url" content="{{ URL::current() }}">
     @yield('facebook-graph')
+
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1">
-                    <button class="btn btn-nao-move visible-xs visible-sm pull-right menu" data-toggle="collapse" href="#menu">
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                    <a class="title" href="{{ URL::to('/') }}">
-                        <img class="logo" src="{{ URL::to('/') }}/img/logos/nao-move.png">
-                    </a>
-                </div>
-                <div class="col-lg-5 text-right">
-                    <div class="visible-md menu visible-lg">
-                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
-                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/equipe">Equipe</a>
-                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/fotos">Fotos</a>
-                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
-                        <a class="btn btn-nao-move btn-sm" href="{{ URL::to('/') }}/contato">Contato</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section id="menu" class="menu collapse">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 visible-sm visible-xs">
-                    <a class="btn btn-block" href="{{ URL::to('/') }}/estatisticas">Estatísticas</a>
-                    <a class="btn btn-block" href="{{ URL::to('/') }}/equipe">Equipe</a>
-                    <a class="btn btn-block" href="{{ URL::to('/') }}/fotos">Fotos</a>
-                    <a class="btn btn-block" href="{{ URL::to('/') }}/na-midia">Na Mídia</a>
-                    <a class="btn btn-block" href="{{ URL::to('/') }}/contato">Contato</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.partials.header')
+
     @yield('content')
+
     <hr>
     <section class="compartilhe">
         <div class="container">
@@ -133,18 +108,32 @@
             </div>
         </div>
     </footer>
-    {{ Minify::javascript(array('/js/jquery-1.11.0.min.js', '/js/bootstrap.min.js')) }}
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    {{ Minify::javascript([
+        '/js/jquery-1.11.0.min.js',
+        '/js/bootstrap.min.js',
+        '/assets/select2/select2.js',
+        '/assets/select2/select2_locale_pt-BR.js'
+    ]) }}
     @yield('js')
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script src="/assets/select2/select2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-  ga('create', 'UA-29298388-6', 'naomove.com.br');
-  ga('send', 'pageview');
+            $("#s2").select2({
+                minimumInputLength: 2,
+                maximumSelectionSize: 5
+            });
 
-</script>
+        });
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29298388-6', 'naomove.com.br');
+      ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
