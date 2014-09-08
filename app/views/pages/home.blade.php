@@ -82,7 +82,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-nao-move btn-lg" href="/estatisticas">Ver Estatísticas Completas</a>
+                <a class="btn btn-warning btn-lg" href="/estatisticas">Ver Estatísticas Completas</a>
             </div>
         </div>
     </div>

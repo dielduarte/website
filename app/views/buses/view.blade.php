@@ -27,29 +27,33 @@ Linha {{ $bus->line  }}: reclamações e avaliações
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Pontualidade</strong></td>
-                            <td>7.0</td>
-                        </tr>
-                        <tr>
                             <td><strong>Conforto</strong></td>
-                            <td>7.0</td>
+                            <td>@include('score.partials.format', ['score' => $score->comfort])</td>
                         </tr>
                         <tr>
-                            <td><strong>Custo Benefício</strong></td>
-                            <td>7.0</td>
+                            <td><strong>Pontualidade</strong></td>
+                            <td>@include('score.partials.format', ['score' => $score->punctuality])</td>
                         </tr>
                         <tr>
                             <td><strong>Respeito ao usuário</strong></td>
-                            <td>7.0</td>
+                            <td>@include('score.partials.format', ['score' => $score->customer_service])</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Itinerário</strong></td>
+                            <td>@include('score.partials.format', ['score' => $score->route])</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custo x benefício</strong></td>
+                            <td>@include('score.partials.format', ['score' => $score->cost_benefit])</td>
                         </tr>
                         <tr>
                             <td><strong>NOTA FINAL</strong></td>
-                            <td><strong><span class="text-success">9.9</span></strong></td>
+                            <td><strong>@include('score.partials.format', ['score' => $score->score])</strong></td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="text-center">
-                    <a class="btn btn-warning btn-lg">Avalie esta linha</a>
+                    <a class="btn btn-warning btn-lg" href="{{ URL::route('score.form', [$bus->line]) }}">Avalie esta linha</a>
                 </div>
             </div>
         </div>

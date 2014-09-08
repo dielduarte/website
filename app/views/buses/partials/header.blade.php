@@ -8,13 +8,14 @@
             <div class="col-sm-2 text-center">
                 <h2>
                     <small>Reclamações:</small><br>
-                    {{ $count  }}
+                    {{ $bus->complaints()->count() }}
                 </h2>
             </div>
             <div class="col-sm-2 text-center">
                 <h2>
                     <small>Nota:</small><br>
-                    <a><span class="text-danger">9.9</span></a>
+                    <?php $score = $bus->scores()->avg('score'); ?>
+                    @include('score.partials.format', ['score' => $score])
                 </h2>
             </div>
         </div>

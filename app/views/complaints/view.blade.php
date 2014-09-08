@@ -10,7 +10,7 @@
 @stop
 
 @section('content')
-@include('buses.partials.header', [$bus, $count])
+@include('buses.partials.header', [$bus])
 <section>
     <div class="container">
         <div class="row">

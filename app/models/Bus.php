@@ -32,4 +32,9 @@ class Bus extends \Eloquent {
     {
         return $this->hasMany('Complaint', 'bus_id');
     }
+
+    public function scores()
+    {
+        return $this->hasMany('Score', 'bus_id');
+    }
 }

@@ -15,11 +15,22 @@ class BusController extends \BaseController {
 
             $complaints = $bus->complaints()->orderBy('created_at', 'DESC')->take(5)->get();
             $count      = $bus->complaints()->count();
+            $score      = \Score::whereBusId($bus->id)
+                                ->first([
+                                    \DB::raw('avg(score) as score'),
+                                    \DB::raw('avg(comfort) as comfort'),
+                                    \DB::raw('avg(punctuality) as punctuality'),
+                                    \DB::raw('avg(customer_service) as customer_service'),
+                                    \DB::raw('avg(route) as route'),
+                                    \DB::raw('avg(route) as route'),
+                                    \DB::raw('avg(cost_benefit) as cost_benefit'),
+                                ]);
 
 	        return View::make('buses.view', compact(
                 'bus',
                 'complaints',
-                'count'
+                'count',
+                'score'
             ));
 	    }
 

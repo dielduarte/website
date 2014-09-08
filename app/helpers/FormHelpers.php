@@ -60,6 +60,19 @@
         return $out;
     });
 
+    Form::macro('radioField', function($name, $label = null, $value = 1, $checked = null, $attributes = array())
+    {
+        $attributes = array_merge(['id' => 'id-field-' . $name], $attributes);
+
+        $out = '<div class="checkbox';
+        $out .= fieldError($name) . '">';
+        $out .= '<label>';
+        $out .= Form::radio($name, $value, $checked, $attributes) . ' ' . $label;
+        $out .= '</div>';
+
+        return $out;
+    });
+
     HTML::macro('gravatar', function($email, $size = 32, $default = 'mm')
     {
         return '<img src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . '?s=' . $size . '&d=' . $default . '" alt="Avatar">';
