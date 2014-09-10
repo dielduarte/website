@@ -10,9 +10,9 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <form class="navbar-form navbar-right text-center">
+        <form class="navbar-form navbar-right text-center hidden-xs">
             <a class="btn btn-warning" href="{{ URL::route('score.form') }}">Avalie a sua linha</a>
-          </form>
+        </form>
         <div class="navbar-collapse collapse" id="navbar-main">
 
             <ul class="nav navbar-nav navbar-right">
