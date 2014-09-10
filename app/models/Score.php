@@ -19,6 +19,7 @@ class Score extends \BaseModel
     public static $rules = [
         'user_name' => 'required|min:5',
         'email' => 'required|email',
+        'bus_id' => 'required|integer|exists:buses,id',
         'comfort' => 'required|in:0,3.3,6.6,10',
         'punctuality' => 'required|in:0,3.3,6.6,10',
         'customer_service' => 'required|in:0,3.3,6.6,10',

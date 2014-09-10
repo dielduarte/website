@@ -1,16 +1,20 @@
 @extends('layouts.master')
 
 @section('title')
-Avalie a linha {{ $bus->line }} do transporte público de BH e região
+Avalie @if($bus) a linha {{ $bus->line }} @else sua linha@endif do transporte público de BH e região
 @stop
 
 @section('content')
+@if ($bus)
 @include('buses.partials.header', [$bus])
+@endif
 <section>
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <h3>Avalie a linha {{ $bus->line }}</h3>
+                @if($bus) <h3>Avalie a linha {{ $bus->line }}</h3> @else <h3>Avalie a sua linha</h3> @endif
+
+
                 @if (\Session::has('errors'))
                     <div class="alert alert-danger text-center">
                         Algum campo não foi preenchido corretamente. Por favor verifique se todas as perguntas foram respondidas.
@@ -23,6 +27,12 @@ Avalie a linha {{ $bus->line }} do transporte público de BH e região
                         </div>
                         <div class="col-sm-6">
                             {{ Form::emailField('email', 'Seu e-mail', Input::old('name')) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group @if ($errors->has('comfort')) has-error @endif">
+                            {{ Form::label('bus_id', 'Linha')  }}
+                            {{ Form::select('bus_id', ['' => '-- Selecione --'] + Bus::activeBusesList()->lists('line_plus_itinerary', 'id'), Input::old('line'), ['id' => 's2', 'class' => 'select2-container form-control']) }}
                         </div>
                     </div>
                     <h4>

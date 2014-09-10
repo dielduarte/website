@@ -14,7 +14,7 @@
                 <h2>
                     <small>Nota:</small><br>
                     <?php $score = $bus->scores()->avg('score'); ?>
-                    @include('score.partials.format', ['score' => $score])
+                    @include('score.partials.format', ['score' => $score])<span class="text-muted">/10</span>
                 </h2>
             </div>
         </div>

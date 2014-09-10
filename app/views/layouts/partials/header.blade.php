@@ -10,14 +10,17 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
+        <form class="navbar-form navbar-right text-center">
+            <a class="btn btn-warning" href="{{ URL::route('score.form') }}">Avalie a sua linha</a>
+          </form>
         <div class="navbar-collapse collapse" id="navbar-main">
-            <ul class="nav navbar-nav navbar-right">
 
+            <ul class="nav navbar-nav navbar-right">
+                <li></li>
                 <li><a href="{{ URL::route('stats') }}">Estatísticas</a></li>
                 <li><a href="{{ URL::to('/') }}/equipe">Equipe</a></li>
-                <li><a href="{{ URL::to('/') }}/fotos">Fotos</a></li>
-                <li><a href="{{ URL::to('/') }}/na-midia">Na Mídia</a></li>
                 <li><a href="{{ URL::to('/') }}/contato">Contato</a></li>
+
 
                 {{--<li><a class="visible-xs" href="{{ URL::to('/') }}/contato">Publicar Reclamação</a></li>--}}
                 {{--<li><button data-toggle="modal" data-target="#complaint-modal" class="btn btn-warning btn-sm hidden-xs">Publicar Reclamação</button></li>--}}

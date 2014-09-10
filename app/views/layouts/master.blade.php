@@ -21,7 +21,7 @@
 
 
     <link rel="shortcut icon" href="{{ URL::to('/') }}/img/logos/favicon.png" type="image/ico" />
-    <meta property="og:image" content="{{ URL::to('/') }}/img/logos/nao-move-vertical.jpg" />
+    <meta property="og:image" content="@yield('facebook.image', URL::to('/img/logos/nao-move-vertical.jpg'))" />
     <meta property="og:url" content="{{ URL::current() }}">
     @yield('facebook-graph')
 
