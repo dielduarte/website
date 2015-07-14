@@ -10,6 +10,7 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="container">
         <div class="row">
@@ -28,20 +29,6 @@
                 </p>
             </div>
             <div class="col-sm-4 text-center">
-                <h2>Douglas Silva Pereira</h2>
-                <p>Social Mídia</p>
-                <img class="img img-responsive img-circle" src="{{ URL::to('/') }}/img/equipe/douglas-silva-pereira.jpg">
-                <p class="about">Jornalista e usuário regular das linhas 3150, s33 e 1140</p>
-                <p>
-                    <a class="btn btn-facebook" target="_blank" href="https://www.facebook.com/silva.51.pereira">
-                        <i class="fa fa-facebook-square fa-2x"></i>
-                    </a>
-                    <a class="btn btn-twitter" target="_blank" href="http://twitter.com/uaiteve">
-                        <i class="fa fa-twitter-square fa-2x"></i>
-                    </a>
-                </p>
-            </div>
-        <div class="col-sm-4 text-center">
                 <h2>Victor Lambertucci</h2>
                 <p>Designer</p>
                 <img class="img img-responsive img-circle" src="{{ URL::to('/') }}/img/equipe/victor-lambertucci.jpg">
@@ -55,11 +42,12 @@
                     </a>
                 </p>
             </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h2>Quero Colaborar?</h2>
-                    <p><a href="{{ URL::to('/') }}/contato">Entre em contato!</a></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2>Quer Colaborar?</h2>
+                        <p><a href="{{ URL::to('/') }}/contato">Entre em contato!</a></p>
+                    </div>
                 </div>
             </div>
         </div>
