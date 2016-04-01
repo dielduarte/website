@@ -274,6 +274,10 @@ footer li{
 
 .logo{ }
 
+.compartilhe__networkSection {
+  min-height: 21px;
+}
+
 @media (max-width: 699px) {
     .logo{
         max-width: 60%;

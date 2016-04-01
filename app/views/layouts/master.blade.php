@@ -35,7 +35,7 @@
     <section class="compartilhe">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-right">
+                <div class="col-lg-8 col-lg-offset-2 text-right compartilhe__networkSection">
                     Compartilhe: <a class="btn btn-xs btn-facebook btn-square" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}">
                     <i class="fa fa-facebook"></i>
                 </a>
